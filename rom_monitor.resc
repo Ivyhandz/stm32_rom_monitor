@@ -1,0 +1,10 @@
+using sysbus
+
+mach create "bluepill"
+machine LoadPlatformDescription @/home/ivyz/renode_1.17.0-portable/platforms/cpus/stm32f103.repl
+
+sysbus LoadELF @/mnt/c/rom_monitor/monitor.elf
+
+showAnalyzer sysbus.usart1
+
+start
